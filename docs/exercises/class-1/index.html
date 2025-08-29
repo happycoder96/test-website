@@ -180,7 +180,12 @@ window.Quarto = {
 <section id="introduction" class="level3">
 <h3 class="anchored" data-anchor-id="introduction">Introduction</h3>
 <p>In the course our main programming language is <a href="https://www.python.org/">Python</a>. As our package and project manager for Python we will use <a href="https://docs.astral.sh/uv/">uv</a>.</p>
-<p>One of the goals of the exercise classes, besides the <a href="#exercise-class">main goal</a>, is to develop a fully functioning Python package. A Python package consists of different Python <a href="https://docs.python.org/3/tutorial/modules.html">modules</a> (<code>.py</code> files) and to edit those you need a text editor; you can use whichever text editor you like. One option is <a href="https://code.visualstudio.com/">VSCode</a>.</p>
+<p>The main goal of the exercise classes is to get hands-on experience with the material covered in the lectures. One of our mantras will be:</p>
+<blockquote class="blockquote">
+<p>if you can’t code it you don’t understand it</p>
+</blockquote>
+<p>One of the subgoals of the exercise classes is to develop a fully fedged Python package consisting of implementations of various methods introduced in the course. This will be done incrementally over the course of the exercise classes. The final package will consist of different modules that contains basic implementations of most of the things that have been taught at the lectures.</p>
+<p>A Python package consists of different Python <a href="https://docs.python.org/3/tutorial/modules.html">modules</a> (<code>.py</code> files) and to edit those you need a text editor; you can use whichever text editor you like. One option is <a href="https://code.visualstudio.com/">VSCode</a>.</p>
 <p>For version control we will use <a href="https://git-scm.com/">git</a> which is the software/technology underlying <a href="https://docs.github.com/en/get-started/start-your-journey/hello-world">GitHub</a> where e.g.&nbsp;the source code for our course <a href="https://github.com/ai-for-humanity-ucph/2025/tree/main">website</a> is hosted. If you aren’t familiar with git then now is the time; I highly recommend reading the first two chapters of the <a href="https://git-scm.com/book/en/v2">this</a>. Also, make sure you understand the difference between Git and Github, see <a href="https://docs.github.com/en/get-started/start-your-journey/about-github-and-git">here</a>.</p>
 <p>We will run different commands in our terminal/shell/command line. The shell has a reputation for being complicated and hard to use but ignore this; it is actually quite simple and very powerful. We won’t do anything fancy but you should be comfortable with opening your shell and running basic commands e.g.&nbsp;executing a Python script like:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mac &amp; Linux</span></span>
@@ -228,8 +233,7 @@ window.Quarto = {
 </section>
 <section id="exercise-class" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-class">Exercise class</h2>
-<p>The main goal of the exercise classes is to get hands-on experience with the material covered in the lectures. One of our mantras will be “if you can’t code it you don’t understand it”.</p>
-<p>As stated above, one of the subgoals of the exercise classes is to develop a fully fedged Python package consisting of implementations of various methods introduced in the course. This will be done incrementally over the course of the exercise classes. The final package will consist of different modules that contains basic implementations of most of the things that have been taught at the lectures.</p>
+<p>With <code>uv</code> and <code>git</code> installed and Python <code>3.13</code> available on your computer we are ready to start the exercise class.</p>
 <section id="exercise-1---create-a-project-directory" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-1---create-a-project-directory">Exercise 1 - Create a project directory</h3>
 <ol type="1">
@@ -244,9 +248,9 @@ window.Quarto = {
 <section id="exercise-2---create-a-uv-project-and-virtual-environment" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-2---create-a-uv-project-and-virtual-environment">Exercise 2 - Create a uv project and virtual environment</h3>
 <ol type="1">
-<li><p>Initialize a new Python project with a Python package named <code>ai5h</code> using uv by running the following command in your shell:</p>
+<li><p>Initialize a new Python project with a Python package named <code>ai4h</code> using uv by running the following command in your shell:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> init <span class="at">--name</span> ai4h <span class="at">--package</span> <span class="at">--python</span> 3.13</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>By the way: you can how over the code and click on the copy to clipboard icon to copy the snippet to your clipboard.</p>
+<p>By the way: you can hover over the code and click on the copy to clipboard icon to copy the snippet to your clipboard.</p>
 <p>If successful you should have a folder structure similar to:</p>
 <pre><code>.
 ├── .git
@@ -259,12 +263,12 @@ window.Quarto = {
         └── __init__.py</code></pre>
 <p>Things to note about this is that <code>uv</code>:</p>
 <ul>
-<li>automatically initialized your <code>exercises</code> folder as a git repository; you can turn this off, see <a href="https://docs.astral.sh/uv/reference/cli/#uv-init--vcs">here</a>, but there is no sane reason to do this; using <code>git</code> in your projects is non-negotiable.</li>
-<li>created a <code>.gitignore</code> file for you; this is a file that tells <code>git</code> which files it should ignore. You can append files that you don’t want <code>git</code> to track to this file; we will return this this.</li>
+<li>automatically initialized your <code>exercises</code> folder as a git repository; you can turn this off, see <a href="https://docs.astral.sh/uv/reference/cli/#uv-init--vcs">here</a>, but there is no sane reason to do this; using <code>git</code> in your projects is non-negotiable from now on until forever.</li>
+<li>created a <code>.gitignore</code> file for you; this is a file that tells <code>git</code> which files it should ignore. You can append files that you don’t want <code>git</code> to track to this file; we will return this later</li>
 <li>created a <code>pyproject.toml</code> file for you; this is a file that contains metadata about your project and its dependencies.</li>
-<li>create a <code>.python-version</code> file for you; this is a file that tells <code>uv</code> which Python version to use when you create a virtual environment, which we will do in the next exercise.</li>
+<li>created a <code>.python-version</code> file for you; this is a file that tells <code>uv</code> which Python version to use when you create a virtual environment, which we will do in the next exercise.</li>
 <li>created a <code>src</code> folder for you; this is where your package code should go. The package name is <code>ai4h</code> so the code for this package should go inside the <code>src/ai4h</code> folder. Note the <code>__init__.py</code> file; this file tells Python that this directory should be treated as a package; see also <a href="https://docs.python.org/3/tutorial/modules.html#packages">here</a>.</li>
-<li>created a <code>README.md</code> file for you; this is a markdown file that contains information about your project e.g.&nbsp;how to use it. You can edit this file using markdown syntax; see e.g. <a href="https://www.markdownguide.org/basic-syntax/">here</a> for a quick introduction to markdown.</li>
+<li>created a <code>README.md</code> file for you; this is a markdown file that contains information about your project e.g.&nbsp;how to use it. You can edit this file using markdown syntax; see <a href="https://www.markdownguide.org/basic-syntax/">here</a> for a quick introduction to markdown.</li>
 </ul></li>
 <li><p>Edit the <code>pyproject.toml</code> file and change the description field to something that describes your project. You can also change the author field to your name.</p></li>
 <li><p>Create a virtual environment for your project by running the following command in your shell:</p>
@@ -282,7 +286,8 @@ window.Quarto = {
 <p>You should confirm that the Python executable is located inside your <code>.venv</code> folder.</p>
 <p>On my end I get:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span> python</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<pre><code>/home/jsr-p/ai-4-humanity/exercises/.venv/bin/python</code></pre></li>
+<pre><code>/home/jsr-p/ai-4-humanity/exercises/.venv/bin/python</code></pre>
+<p>i.e.&nbsp;the python executable is inside the <code>.venv/bin/</code> folder of my <code>exercises</code> project folder which is what we want.</p></li>
 </ol>
 </section>
 <section id="exercise-3---installing-dependencies" class="level3">
@@ -372,16 +377,18 @@ P(Y_i = 1 \mid X_{i}) =
 {1 + \exp \{X_i^\top \beta\}}
 =: \sigma(X_i^\top \beta)
 \tag{1}\]</span></span></p>
-<p>where <span class="math inline">\(\sigma: \mathbb{R} \to [0, 1]\)</span> is the sigmoid function. We assume we have an i.i.d sample of <span class="math inline">\(n\)</span> observations i.e.&nbsp;<span class="math inline">\(\{(Y_{i},
+<p>where <span class="math inline">\(\sigma: \mathbb{R} \to [0, 1]\)</span> is the sigmoid function (also known as the <em>expit</em> function). We assume we have an i.i.d sample of <span class="math inline">\(n\)</span> observations i.e.&nbsp;<span class="math inline">\(\{(Y_{i},
 X_{i})\}_{i=1}^{n}\)</span>.</p>
-<p>We will estimate <span class="math inline">\(\beta\)</span> using the iteratively reweighted least squares (IRLS) algorithm and implement inside of <code>src/ai4h/models/linear_model.py</code> package.</p>
+<p>We will estimate <span class="math inline">\(\beta\)</span> using the iteratively reweighted least squares (IRLS) algorithm and implement it inside of <code>src/ai4h/models/linear_model.py</code> package.</p>
 <hr>
 <ol type="1">
-<li><p>Show that we can go from the probability in <a href="#eq-logreg" class="quarto-xref">Equation&nbsp;1</a> to the log-odds form: <span id="eq-logodds"><span class="math display">\[
+<li><p>Show that we can go from the probability in <a href="#eq-logreg" class="quarto-xref">Equation&nbsp;1</a> to the log odds form: <span id="eq-logodds"><span class="math display">\[
+\mathrm{logit} (P(Y_i = 1 \mid X_{i}))
+:=
 \log \frac{P(Y_i = 1 \mid X_{i})}{1 - P(Y_i = 1 \mid X_{i})}
 = X_i^\top \beta.
 \tag{2}\]</span></span></p>
-<p><a href="#eq-logodds" class="quarto-xref">Equation&nbsp;2</a> shows that the log-odds is linear in the parameters <span class="math inline">\(\beta\)</span>.</p></li>
+<p><a href="#eq-logodds" class="quarto-xref">Equation&nbsp;2</a> shows that the log odds is linear in the parameters <span class="math inline">\(\beta\)</span>. Also, comparing <a href="#eq-logodds" class="quarto-xref">Equation&nbsp;2</a> and <a href="#eq-logreg" class="quarto-xref">Equation&nbsp;1</a> shows that the <em>logit</em> function is the inverse of the <em>expit</em> function.</p></li>
 <li><p>Write sigmoid function as a function of the variable <span class="math inline">\(z \in \mathbb{R}\)</span>:</p>
 <p><span class="math display">\[
 \sigma(z) = \frac{1}{1 + \exp(-z)}.
