@@ -6,7 +6,28 @@
     <description>Recent content in Posts on AI for Humanity</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate></lastBuildDate>
+    <lastBuildDate>Mon, 01 Sep 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://happycoder96.github.io/test-website/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Exam project</title>
+      <link>https://happycoder96.github.io/test-website/post/exam/</link>
+      <pubDate>Mon, 01 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://happycoder96.github.io/test-website/post/exam/</guid>
+      <description>&lt;p&gt;TODO: add exam info&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Installation</title>
+      <link>https://happycoder96.github.io/test-website/post/install/</link>
+      <pubDate>Mon, 01 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://happycoder96.github.io/test-website/post/install/</guid>
+      <description>&lt;p&gt;Main tools:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;python&lt;/li&gt;&#xA;&lt;li&gt;git&lt;/li&gt;&#xA;&lt;li&gt;github&lt;/li&gt;&#xA;&lt;li&gt;text editor&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Example guides:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://sites.google.com/view/numeconcph-introprog/guides/installation?authuser=0&#34;&gt;Introduction to Programming and Numerical Analysis UCPH&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Preparation</title>
+      <link>https://happycoder96.github.io/test-website/post/preparation/</link>
+      <pubDate>Mon, 01 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://happycoder96.github.io/test-website/post/preparation/</guid>
+      <description>&lt;p&gt;TODO: add preparations here&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>
